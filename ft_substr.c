@@ -15,16 +15,16 @@
 char	*ft_substr(const char *str, size_t start, size_t len)
 {
 	char	*substr;
-	size_t	i;
 
-	i = 0;
-	if (len == 0)
+	if (!str)
 		return (NULL);
 	substr = (char *)malloc(len + 1);
 	if (!substr)
 		return (NULL);
 	substr = ft_memcpy(substr, str + start, len);
-	if (i >= len)
-		return (NULL);
+	if (len == 0)
+		*substr = '\0';
+	if (len == 1)
+		substr[len] = '\0';
 	return (substr);
 }
