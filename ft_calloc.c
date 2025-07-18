@@ -22,7 +22,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (nmemb > (2147483647 / size))
 		return (NULL);
 	full_size = nmemb * size;
-	ptr = (void *) malloc(full_size);
+	ptr = (void *) malloc(full_size + 1);
 	if (!ptr)
 		return (NULL);
 	ft_bzero(ptr, full_size);
