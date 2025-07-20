@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libft.h"
+
 static int	ft_isspace(char c)
 {
 	return ((c >= '\t' && c <= '\r') || c == ' ');
@@ -22,11 +24,13 @@ int	ft_atoi(char *nbr)
 
 	result = 0;
 	sign = 1;
-	while (ft_isspace(*nbr++))
-		;
-	if (*nbr++ == '-')
-		sign *= -1;
-	while (*nbr)
+	while (ft_isspace(*nbr) || *nbr == '-' || *nbr == '+')
+	{
+		if (*nbr == '-')
+			sign *= -1;
+		nbr++;
+	}
+	while (ft_isdigit(*nbr))
 		result = result * 10 + (*nbr++ - '0');
-	return (result);
+	return (result * sign);
 }

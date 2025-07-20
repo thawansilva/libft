@@ -22,16 +22,3 @@ int	ft_strncmp(const char *str1, const char *str2, int n)
 		return (0);
 	return ((unsigned char) *str1 - (unsigned char) *str2);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-int main(void)
-{
-	printf("%i\n", ft_strncmp("abc", "ab", 2));
-	printf("%i\n", ft_strncmp("abcdef", "abh", 3));
-	printf("%i\n", strncmp("abc", "ab", 2));
-	printf("%i\n", strncmp("abcdef", "abh", 3));
-	return 0;
-}
-*/

@@ -10,12 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_tolower(char *str)
+int	ft_tolower(int str)
 {
-	while (*str)
-	{
-		if (*str >= 'A' && *str <= 'Z')
-			*str += 32;
-		str++;
-	}
+	if (str >= 'A' && str <= 'Z')
+		str += 32;
+	return (str);
 }

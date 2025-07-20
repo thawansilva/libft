@@ -28,7 +28,7 @@ static size_t	ft_get_count_set(const char *s1, const char *set)
 			if (s1[i] == set[j++])
 			{
 				count++;
-				break;
+				break ;
 			}
 		}
 		i++;
@@ -50,7 +50,7 @@ void	ft_strset(char *dest, const char *src, const char *set)
 		while (set[z])
 		{
 			if (src[i] == set[z])
-				break;
+				break ;
 			z++;
 		}
 		if (set[z] == '\0')
