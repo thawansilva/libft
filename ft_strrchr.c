@@ -15,13 +15,14 @@ char	*ft_strrchr(const char *str, int c)
 	char	*last;
 
 	last = 0;
+
 	while (*str)
 	{
-		if (*str == c)
+		if (*str == (char) c)
 			last = (char *)str;
 		str++;
 	}
-	if (*str == c)
+	if (*str == (char) c)
 		return ((char *)str);
 	return (last);
 }

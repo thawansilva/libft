@@ -10,15 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *str1, const char *str2, int n)
+#include "./libft.h"
+
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	while (n > 0 && *str1 && *str2 && *str1 == *str2)
-	{
-		n--;
-		str1++;
-		str2++;
-	}
-	if (n == 0)
+	size_t	i;
+
+	i = 0;
+	while (i < n && str1[i] && str1[i] == str2[i])
+		i++;
+	if (i == n)
 		return (0);
-	return ((unsigned char) *str1 - (unsigned char) *str2);
+	return ((unsigned char) str1[i] - (unsigned char) str2[i]);
 }
