@@ -11,7 +11,7 @@ SRCBONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstla
 		   ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c\
 		   ft_lstmap_bonus.c
 OBJS = $(SRCS:.c=.o)
-BONUSOBJ = $(SRCBONUS:.c=.o)
+BONUSOBJS = $(SRCBONUS:.c=.o)
 
 CFLAGS = -g -Wall -Wextra -Werror
 RM = rm -f
@@ -19,15 +19,16 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	ar rcs $(NAME) $^
 
-bonus: $(BONUSOBJ)
+bonus:
+	@$(MAKE) OBJS="$(OBJS) $(BONUSOBJS)"
 
 %.o : %.c
 	cc $(CFLAGS) -I . -c $^ -o $@
-	ar rcs $(NAME) $@
 
 clean:
-	$(RM) $(OBJS) $(BONUSOBJ)
+	$(RM) $(OBJS) $(BONUSOBJS)
 
 fclean: clean
 	$(RM) $(NAME)

@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <string.h>
 #include "./libft.h"
 
 static int	ft_count_words(char const *s, char c)
@@ -20,22 +22,26 @@ static int	ft_count_words(char const *s, char c)
 
 	i = 0;
 	start = 0;
-	count = 1;
+	count = 0;
+	if (!*s)
+		return (0);
 	while (s[i])
 	{
 		if (s[i] == c && i != start)
 		{
 			count++;
-			start = i + i;
+			start = i + 1;
 		}
 		else if (s[i] == c && i == start)
 			start = i + 1;
 		i++;
 	}
+	if (i > start)
+		count++;
 	return (count);
 }
 
-void	ft_free_arr(char **arr)
+static void	ft_free_arr(char **arr)
 {
 	size_t	i;
 
@@ -62,7 +68,9 @@ static void	ft_insert_str(char **arr, const char *s, char c)
 		{
 			arr[j] = ft_substr(s, start, i - start);
 			if (!arr[j++])
-				ft_free_arr(arr);
+			{
+				return (ft_free_arr(arr));
+			}
 			start = i + 1;
 		}
 		else if (s[i] == c && i == start)
@@ -76,14 +84,8 @@ static void	ft_insert_str(char **arr, const char *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t		i;
-	size_t		j;
-	size_t		start;
-	char		**arr;
+	char	**arr;
 
-	i = 0;
-	j = 0;
-	start = 0;
 	arr = ft_calloc((ft_count_words(s, c) + 1), sizeof(char *));
 	if (!arr)
 		return (NULL);

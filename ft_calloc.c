@@ -19,7 +19,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (nmemb == 0 || size == 0)
 		return (ft_strdup(""));
-	if (nmemb > (INT_MAX / size))
+	if (nmemb > ((size_t) -1 / size))
 		return ((void *)0);
 	full_size = nmemb * size;
 	ptr = (void *) malloc(full_size);
