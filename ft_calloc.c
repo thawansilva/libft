@@ -18,13 +18,13 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	full_size;
 
 	if (nmemb == 0 || size == 0)
-		return (NULL);
-	if (nmemb > (2147483647 / size))
-		return (NULL);
+		return (ft_strdup(""));
+	if (nmemb > (INT_MAX / size))
+		return ((void *)0);
 	full_size = nmemb * size;
-	ptr = (void *) malloc(full_size + 1);
+	ptr = (void *) malloc(full_size);
 	if (!ptr)
-		return (NULL);
+		return ((void *)0);
 	ft_bzero(ptr, full_size);
 	return (ptr);
 }

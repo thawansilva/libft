@@ -10,16 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(char *str, char *sub, unsigned int n)
+#include "./libft.h"
+
+char	*ft_strnstr(char *str, char *sub, size_t n)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (str[i] && i <= n)
+	if (n < 0)
+		return (str);
+	if (n < 0 || *sub == '\0')
+		return (str);
+	while (str[i] && i < n)
 	{
 		j = 0;
-		while ((str[i + j] == sub[j]) && (j <= n - i) && sub[j])
+		while ((str[i + j] == sub[j]) && (j < n - i) && sub[j])
 			j++;
 		if (sub[j] == '\0')
 			return (&(str[i]));

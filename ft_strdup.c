@@ -19,6 +19,8 @@ char	*ft_strdup(const char *str)
 
 	i = 0;
 	dup_str = (char *)malloc(ft_strlen(str) + 1);
+	if (!dup_str)
+		return (0);
 	while (str[i])
 	{
 		dup_str[i] = str[i];

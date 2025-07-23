@@ -41,6 +41,8 @@ char	*ft_itoa(int n)
 	sign = 1;
 	size = ft_getsize(num);
 	nbr = (char *) malloc(size + 1);
+	if (!nbr)
+		return (0);
 	nbr[size] = '\0';
 	if (num < 0)
 	{

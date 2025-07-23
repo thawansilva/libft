@@ -23,12 +23,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str = (char *) malloc(size + 1);
 	if (!str)
 		return (NULL);
-	str[size--] = '\0';
-	while (size)
-	{
+	str[size] = '\0';
+	while (size--)
 		str[size] = f(size, s[size]);
-		size--;
-	}
 	if (size == 0)
 		str[size] = f(size, s[size]);
 	return (str);
