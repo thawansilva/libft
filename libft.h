@@ -14,7 +14,6 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-# include <limits.h>
 
 typedef struct s_list
 {
@@ -22,11 +21,11 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
-int		ft_isalpha(char c);
-int		ft_isdigit(char c);
-int		ft_isalnum(char c);
-int		ft_isascii(char c);
-int		ft_isprint(char c);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
 size_t	ft_strlen(const char *str);
 void	ft_bzero(void *s, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
@@ -46,7 +45,7 @@ char	*ft_strnstr(char *str, char *sub, size_t n);
 int		ft_atoi(const char *nbr);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *str);
-char	*ft_substr(const char *str, size_t start, size_t len);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
