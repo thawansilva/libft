@@ -12,7 +12,7 @@ This project consists in recreate some pattern functions that exists in C. In so
 
 ### Evaluation
 
-<img src="/img/evaluations.png" alt="Print of all evaluations tests"></img>
+<img src="public/img/evaluations.png" alt="Print of all evaluations tests"></img>
 
 ```
 /* Execution */
