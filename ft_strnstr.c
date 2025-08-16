@@ -17,11 +17,9 @@ char	*ft_strnstr(char *str, char *sub, size_t n)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	if (n < 0)
-		return (str);
 	if (n < 0 || *sub == '\0')
 		return (str);
+	i = 0;
 	while (str[i] && i < n)
 	{
 		j = 0;
@@ -31,5 +29,5 @@ char	*ft_strnstr(char *str, char *sub, size_t n)
 			return (&(str[i]));
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

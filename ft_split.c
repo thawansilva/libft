@@ -18,11 +18,11 @@ static int	ft_count_words(char const *s, char c)
 	int	i;
 	int	count;
 
+	if (!*s)
+		return (0);
 	i = 0;
 	start = 0;
 	count = 0;
-	if (!*s)
-		return (0);
 	while (s[i])
 	{
 		if (s[i] == c && i != start)
@@ -66,9 +66,7 @@ static void	ft_insert_str(char **arr, const char *s, char c)
 		{
 			arr[j] = ft_substr(s, start, i - start);
 			if (!arr[j++])
-			{
 				return (ft_free_arr(arr));
-			}
 			start = i + 1;
 		}
 		else if (s[i] == c && i == start)
@@ -77,7 +75,8 @@ static void	ft_insert_str(char **arr, const char *s, char c)
 	}
 	if (i > start)
 		arr[j++] = ft_substr(s, start, i - start);
-	arr[j] = 0;
+	if (!arr[j])
+		return (ft_free_arr(arr));
 }
 
 char	**ft_split(char const *s, char c)

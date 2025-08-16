@@ -12,46 +12,45 @@
 
 #include "./libft.h"
 
-static int	ft_getsize(int n)
+static int	ft_count_digits(int n)
 {
-	int	size;
+	int	count_dig;
 
-	size = 0;
+	count_dig = 0;
 	if (n <= 0)
 	{
-		size++;
+		count_dig++;
 		n = -n;
 	}
 	while (n != 0)
 	{
-		size++;
+		count_dig++;
 		n /= 10;
 	}
-	return (size);
+	return (count_dig);
 }
 
 char	*ft_itoa(int n)
 {
 	int		sign;
-	int		size;
+	int		count_dig;
 	long	num;
 	char	*nbr;
 
 	num = n;
-	sign = 1;
-	size = ft_getsize(num);
-	nbr = (char *) malloc(size + 1);
+	count_dig = ft_count_digits(num);
+	nbr = (char *) ft_calloc(count_dig + 1, sizeof(char));
 	if (!nbr)
 		return (0);
-	nbr[size] = '\0';
+	sign = 1;
 	if (num < 0)
 	{
 		sign = -1;
 		num = -num;
 	}
-	while (size--)
+	while (count_dig--)
 	{
-		nbr[size] = num % 10 + '0';
+		nbr[count_dig] = num % 10 + '0';
 		num /= 10;
 	}
 	if (sign < 0)
