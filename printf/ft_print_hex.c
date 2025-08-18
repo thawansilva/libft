@@ -28,7 +28,7 @@ unsigned int	ft_putnbr_hex(unsigned int nbr, char case_letter)
 	else
 		base = "0123456789ABCDEF";
 	if (nbr < 16)
-		len += ft_putnbr_hex(base[nbr]);
+		len += ft_print_hex(base[nbr]);
 	else
 	{
 		len += ft_putnbr_hex(nbr / 16, case_letter);

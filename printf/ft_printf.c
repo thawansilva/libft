@@ -31,7 +31,7 @@ static unsigned int	ft_print_arg(char c, va_list args)
 	else if (c == 's')
 		len += ft_print_str(va_arg(args, char *));
 	else if (c == 'x' || c == 'X')
-		len += ft_print_hex(va_arg(args, unsigned int), c);
+		len += ft_putnbr_hex(va_arg(args, unsigned int), c);
 	else
 		len += ft_print_ptr(va_arg(args, t_ptr));
 	return (len);
