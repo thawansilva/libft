@@ -75,8 +75,6 @@ static void	ft_insert_str(char **arr, const char *s, char c)
 	}
 	if (i > start)
 		arr[j++] = ft_substr(s, start, i - start);
-	if (!arr[j])
-		return (ft_free_arr(arr));
 }
 
 char	**ft_split(char const *s, char c)
