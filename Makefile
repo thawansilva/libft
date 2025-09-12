@@ -22,23 +22,29 @@ BONUSOBJS = $(SRCBONUS:.c=.o)
 
 CFLAGS = -g -Wall -Wextra -Werror
 RM = rm -f
+COLOR_GREEN := \033[0;32m
+END_COLOR := \033[0m
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $@ $^
+	@ar rcs $@ $^
+	@echo "✅ $(COLOR_GREEN)$@ CREATED $(END_COLOR)"
 
 bonus:
 	@$(MAKE) OBJS="$(OBJS) $(BONUSOBJS)"
 
 %.o : %.c
-	cc $(CFLAGS) -I . -c $^ -o $@
+	@cc $(CFLAGS) -I . -c $< -o $@
+	@echo "✅ $(COLOR_GREEN)$< CREATED $(END_COLOR)"
 
 clean:
-	$(RM) $(OBJS) $(BONUSOBJS)
+	@$(RM) $(OBJS) $(BONUSOBJS)
+	@echo "✅ $(COLOR_GREEN)Object files DELETED $(END_COLOR)"
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "✅ $(COLOR_GREEN)$(NAME) DELETED $(END_COLOR)"
 
 re: fclean all
 
