@@ -14,6 +14,13 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# define STDOUT 0
+# define STDIN 1
+# define STDERR 2
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif 
 
 // Structures
 typedef struct s_list
