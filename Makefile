@@ -36,7 +36,7 @@ bonus:
 
 %.o : %.c
 	@cc $(CFLAGS) -I . -c $< -o $@
-	@echo "✅ $(COLOR_GREEN)$< CREATED $(END_COLOR)"
+	@echo "✅ $(COLOR_GREEN)$@ CREATED $(END_COLOR)"
 
 clean:
 	@$(RM) $(OBJS) $(BONUSOBJS)
