@@ -6,7 +6,7 @@
 /*   By: thaperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 20:28:00 by thaperei          #+#    #+#             */
-/*   Updated: 2025/07/11 20:28:00 by thaperei         ###   ########.fr       */
+/*   Updated: 2025/10/10 07:36:12 by thawan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,7 @@ char	*ft_strdup(const char *str)
 	int		i;
 
 	dup_str = (char *) ft_calloc(ft_strlen(str) + 1, sizeof(char));
-	if (!dup_str)
-		return (0);
-	i = 0;
-	while (str[i])
-	{
-		dup_str[i] = str[i];
-		i++;
-	}
+	if (dup_str != NULL)
+		ft_strlcpy(dup_str, str, ft_strlen(str));
 	return (dup_str);
 }
