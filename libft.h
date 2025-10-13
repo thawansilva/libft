@@ -6,17 +6,20 @@
 /*   By: thaperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 17:04:57 by thaperei          #+#    #+#             */
-/*   Updated: 2025/07/12 17:04:57 by thaperei         ###   ########.fr       */
+/*   Updated: 2025/10/13 18:35:55 by thaperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
-# include <unistd.h>
-# define STDOUT 0
-# define STDIN 1
-# define STDERR 2
+// Standard Streams
+enum e_stream
+{
+	STDIN,
+	STDOUT,
+	STDERR
+};
 
 // Structures
 typedef struct s_list
@@ -85,4 +88,18 @@ void	ft_swap_string(char **str1, char **str2);
 void	ft_swap_char(char chr1, char chr2);
 void	ft_swap_int(int n1, int n2);
 
+// ---------------------------- Get Next Line ---------------------------------
+char						*get_next_line(int fd);
+char						*append_remainder(char *s1, char *s2);
+
+// ---------------------------- ft_printf -------------------------------------
+typedef unsigned long long	t_ptr;
+
+unsigned int				ft_print_nbr(int nbr);
+unsigned int				ft_print_str(char *str);
+unsigned int				ft_print_unbr(unsigned int nbr);
+unsigned int				ft_print_ptr(unsigned long long ptr);
+unsigned int				ft_print_hex(unsigned int nbr, char type);
+unsigned int				ft_printf(const char *format, ...);
 #endif
+# include <unistd.h>
