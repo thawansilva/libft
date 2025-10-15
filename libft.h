@@ -6,7 +6,7 @@
 /*   By: thaperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 17:04:57 by thaperei          #+#    #+#             */
-/*   Updated: 2025/10/13 18:35:55 by thaperei         ###   ########.fr       */
+/*   Updated: 2025/10/15 10:56:33 by thaperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+char	**ft_split(char const *s, char c);
 
 // ---------------------------- Memory Manipulation ---------------------------
 void	*ft_memset(void *s, int c, size_t n);
