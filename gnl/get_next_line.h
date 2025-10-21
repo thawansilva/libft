@@ -6,16 +6,15 @@
 /*   By: thaperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 11:22:51 by thaperei          #+#    #+#             */
-/*   Updated: 2025/07/25 11:22:51 by thaperei         ###   ########.fr       */
+/*   Updated: 2025/10/21 14:05:38 by thaperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # include "libft.h"
+
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
 # endif
-
-char	*get_next_line(int fd);
 #endif 

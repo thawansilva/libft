@@ -6,13 +6,14 @@
 /*   By: thaperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 17:04:57 by thaperei          #+#    #+#             */
-/*   Updated: 2025/10/13 18:35:55 by thaperei         ###   ########.fr       */
+/*   Updated: 2025/10/21 14:02:25 by thaperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <unistd.h>
 // Standard Streams
 enum e_stream
 {
@@ -102,4 +103,3 @@ unsigned int				ft_print_ptr(unsigned long long ptr);
 unsigned int				ft_print_hex(unsigned int nbr, char type);
 unsigned int				ft_printf(const char *format, ...);
 #endif
-# include <unistd.h>

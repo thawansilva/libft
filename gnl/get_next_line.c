@@ -6,7 +6,7 @@
 /*   By: thaperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 11:21:54 by thaperei          #+#    #+#             */
-/*   Updated: 2025/07/25 11:21:54 by thaperei         ###   ########.fr       */
+/*   Updated: 2025/10/21 13:59:12 by thaperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ static char	*ft_get_remainder(char *str)
 static char	*ft_parse_line(char *rest, int fd)
 {
 	char	*buff;
-	char	*tmp_rest;
 	int		bytes_read;
 
 	buff = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
@@ -77,9 +76,7 @@ static char	*ft_parse_line(char *rest, int fd)
 		if (bytes_read < 0)
 			return (ft_free(buff, rest));
 		buff[bytes_read] = '\0';
-		tmp_rest = ft_strjoin(rest, buff);
-		free(rest);
-		rest = tmp_rest;
+		rest = append_remainder(rest, buff);
 		if (ft_strchr(buff, '\n'))
 			break ;
 	}
