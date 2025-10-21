@@ -6,7 +6,7 @@
 /*   By: thaperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:54:23 by thaperei          #+#    #+#             */
-/*   Updated: 2025/07/12 16:54:23 by thaperei         ###   ########.fr       */
+/*   Updated: 2025/10/13 21:17:01 by thawan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(char *str, char *sub, size_t n)
 	size_t	i;
 	size_t	j;
 
-	if (n < 0 || *sub == '\0')
+	if (*sub == '\0')
 		return (str);
 	i = 0;
 	while (str[i] && i < n)
