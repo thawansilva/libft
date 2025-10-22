@@ -6,7 +6,7 @@
 /*   By: thaperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 11:21:54 by thaperei          #+#    #+#             */
-/*   Updated: 2025/10/21 13:59:12 by thaperei         ###   ########.fr       */
+/*   Updated: 2025/10/21 14:22:21 by thaperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ static char	*ft_parse_line(char *rest, int fd)
 	if (!buff)
 		return (ft_free(buff, rest));
 	bytes_read = 1;
+	if (rest == NULL)
+		rest = ft_strdup("");
 	while (bytes_read > 0)
 	{
 		bytes_read = read(fd, buff, BUFFER_SIZE);
