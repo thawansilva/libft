@@ -6,7 +6,7 @@
 /*   By: thaperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 13:59:52 by thaperei          #+#    #+#             */
-/*   Updated: 2025/10/21 14:00:05 by thaperei         ###   ########.fr       */
+/*   Updated: 2025/10/23 19:26:06 by thaperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,3 @@ char	*append_remainder(char *s1, char *s2)
 	free(s1);
 	return (str_join);
 }
-
